@@ -25,7 +25,7 @@ def ingreso_entero_reintento(mensaje, cantidad_reintentos=5):
 
 
 
-def IngresoEntero(mensaje):
+def ingreso_entero(mensaje):
     try:
         entero = int(input(mensaje + ">>> "))
     except ValueError:
@@ -41,5 +41,5 @@ def ingreso_entero_restringido(mensaje, valor_minimo=0, valor_maximo=10):
 
 
 if __name__ == "__main__":
-    print(IngresoEntero("mandale un entero"))
+    print(ingreso_entero("mandale un entero"))
     print(ingreso_entero_restringido("ahora probamos el rango"))
