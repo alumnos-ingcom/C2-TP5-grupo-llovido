@@ -8,7 +8,14 @@ import tp4ej1.py as inp
 
 def es_par(numero):
     """
-    Función que retorna True si el numero ingresado es par y False en caso contrario
+    Función que indica si el número es par o impar.
+
+    atributos:
+        numero(int): numero a ser probado
+
+    retorna:
+        True: si el numero es par
+        False: si el numero es impar
     """
     pass
 
