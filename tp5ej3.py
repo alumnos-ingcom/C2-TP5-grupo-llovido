@@ -4,6 +4,9 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
+import tp4ej1.py as inp
+
+
 
 def tribonacci():
      """
@@ -27,6 +30,8 @@ def tribonacci():
     """
     pass
 
+
+
 def prueba():
     """Toda la interacción con el usuario va acá"""
     while True:
@@ -43,6 +48,7 @@ False si el numero es impar
             sleep(10)
         elif test == 2:
             break
+
 
 
 if __name__ == "__main__":

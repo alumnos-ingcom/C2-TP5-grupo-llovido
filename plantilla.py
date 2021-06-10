@@ -4,7 +4,7 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-
+import tp4ej1.py as inp
 # Reemplazar por las funciones del ejercicio
 
 

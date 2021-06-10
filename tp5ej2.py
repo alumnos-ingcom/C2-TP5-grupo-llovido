@@ -4,6 +4,8 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
+
+
 def fibonacci(n, call=True):
     """
     Funcion que retorna el n-esimo termino de la sucesion de fibonacci.
@@ -26,17 +28,23 @@ def fibonacci(n, call=True):
     """
     if n < 0:
         raise ValueError("se tiene que ingresar un numero positivo mayor a 2")
+
     if n == 0 or n == 1:
         if call:
             raise ValueError("n tiene que ser mayor que 2")
         ret = 1
     else:
         ret = fibonacci(n - 1, call=False) + fibonacci(n - 2, call=False)
+
     return ret
+
+
 
 def prueba():
     """Toda la interacción con el usuario va acá"""
     print(fibonacci(5))
+
+
 
 if __name__ == "__main__":
     prueba()
