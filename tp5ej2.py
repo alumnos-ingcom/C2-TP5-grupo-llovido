@@ -16,7 +16,7 @@ def fibonacci(n, call=True):
     entero positivo mayor a 2
 
     Parametros:
-        n(int): valor de la iteracion a retornar
+        n(int):         valor de la iteracion a retornar
         call(bool):     indicador de si es la primer llamada a la funcion
                         o si se trata de alguna recursión
 

@@ -20,6 +20,7 @@ def es_par(numero):
     pass
 
 def prueba():
+    """Toda la interacción con el usuario va aca"""
     while True:
         print('\033[2J')
         print("""
