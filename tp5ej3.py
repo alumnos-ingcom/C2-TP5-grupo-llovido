@@ -4,20 +4,21 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-import tp4ej1.py as inp
+import tp4ej1 as inp
+from time import sleep
 
 
 
-def tribonacci():
-     """
-    Funcion que retorna el n-esimo termino de la sucesion de tribonacci.
+def tribonacci(n, call=True):
+    """
+    Funcion que retorna el n-esimo termino de la sucesion de fibonacci.
 
-    El valor ingresado debe ser un entero positivo mayor a 3.
-    En el caso que se le ingrese 0, 1 o 2, la funcion levanta un ValueError
-    avisando de que el numero debe ser mayor a 3.
+    El valor ingresado debe ser un entero positivo mayor a 2.
+    En el caso que se le ingrese 0 o 1, la funcion levanta un ValueError
+    avisando de que el numero debe ser mayor a 2.
     En el caso que el numero ingresado sea negativo, la funcion levanta
     otro ValueError que avisa que el numero ingresado debe ser un 
-    entero positivo mayor a 3
+    entero positivo mayor a 2
 
     Parametros:
         n(int):         valor de la iteracion a retornar
@@ -26,9 +27,20 @@ def tribonacci():
 
     retorna:
         ret(int):       retorna el resultado del n-esimo termino de la
-                        sucesion de tribonacci
+                        sucesion de fibonacci
     """
-    pass
+    if n < 0:
+        raise ValueError("se tiene que ingresar un numero positivo mayor a 2")
+
+    if n == 0 or n == 1 or n == 2:
+        if call:
+            raise ValueError("n tiene que ser mayor que 3")
+        ret = 1
+    else:
+        ret = tribonacci(n - 1, call=False) + tribonacci(n - 2, call=False)
+        + tribonacci(n - 3, call=False)
+
+    return ret
 
 
 
@@ -45,9 +57,12 @@ False si el numero es impar
 
         test = inp.ingreso_entero_restringido("ingrese opción", 1, 2)
         if test == 1:
+            n = inp.ingreso_entero("ingrese numero de prueba")
+            resultado = tribonacci(n)
+            print(f'El término {n} de la serie es: {resultado}')
             sleep(10)
         elif test == 2:
-            break
+            break    
 
 
 
