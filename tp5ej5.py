@@ -28,11 +28,11 @@ def inversion(texto):
     for i in range(len(texto)):
         var1 =  ord(texto[i])
         if (var1 >= 97 and var1 <= 122):
-            var2 = var1 - 32
+            var1 = var1 - 32
         elif (var1 >= 65 and var1 <= 90):
-            var2 = var1 + 32
-        intermedio.append(chr(var2))
-    return intermedio 
+            var1 = var1 + 32
+        intermedio.append(chr(var1))
+    return "".join(intermedio) 
 
 
 
@@ -43,7 +43,7 @@ def prueba():
         print("""
 En este ejercicio, se ingresa una palabra en mayúsculas y
 minúsculas y la función retorna la inversión entre ellas.
-    Ingrese 1 para ingresar número
+    Ingrese 1 para ingresar texto a invertir
     Ingrese 2 para terminar la prueba""")
 
         test = inp.ingreso_entero_restringido("ingrese opción", 1, 2)
