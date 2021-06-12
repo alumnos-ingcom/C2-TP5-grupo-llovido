@@ -34,7 +34,7 @@ def ingreso_entero(mensaje):
 
 def ingreso_entero_restringido(mensaje, valor_minimo=0, valor_maximo=10):
     """Funcion para restringir el rango de ingreso"""
-    valor = IngresoEntero(mensaje)
+    valor = ingreso_entero(mensaje)
     if valor < valor_minimo or valor > valor_maximo:
         raise IngresoIncorrecto(f"el entero tiene que estar entre {valor_minimo} y {valor_maximo}")
     return valor
