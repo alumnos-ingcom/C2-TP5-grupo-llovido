@@ -24,7 +24,6 @@ def numeros_perfectos(numero):
     for i in range(1, numero):
         if numero % i == 0:
             suma = suma + i
-        print(i , numero, suma)
     if numero == suma:
         return True
     else:
