@@ -32,6 +32,9 @@ False si el numero es impar
 
         test = inp.ingreso_entero_restringido("ingrese opción", 1, 2)
         if test == 1:
+            n = inp.ingreso_entero("ingrese numero de prueba")
+            resultado = es_par(n)
+            print(f'El numero es: {resultado}')
             sleep(10)
         elif test == 2:
             break
