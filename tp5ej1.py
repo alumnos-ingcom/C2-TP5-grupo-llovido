@@ -8,6 +8,8 @@ import tp4ej1 as inp
 import tp4ej7 as div
 from time import sleep
 
+
+
 def es_par(numero):
     """
     Función que indica si el número es par o impar.
@@ -24,6 +26,8 @@ def es_par(numero):
         return True
     else:
         return False
+
+
 
 def prueba():
     """Toda la interacción con el usuario va aca"""
@@ -45,6 +49,7 @@ False si el numero es impar
         elif test == 2:
             break
 
+
+
 if __name__ == "__main__":
     prueba()
-
