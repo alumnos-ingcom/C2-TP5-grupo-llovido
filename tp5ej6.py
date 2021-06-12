@@ -58,11 +58,14 @@ def balanceo(texto, tipo='p'):
     contador = 0
 
     for i in range(len(texto)):
-        if(ord(texto[i]) == abrir):
-            contador += 1
+        if(contador == 0 and ord(texto[i]) == cerrar):
+            contador -= 1
+            break
+        elif(ord(texto[i]) == abrir):
+            contador += 1 
         elif(ord(texto[i]) == cerrar):
             contador -= 1
-
+     
     if contador == 0:
         ret = True
     else:
@@ -90,7 +93,7 @@ contrario.
             cosa = input("ingrese 'c' (corchete), 'l' (llave) o 'p' (parentesis) >>> ")
             resultado = balanceo(text, cosa)
             print(f'El numero es: {resultado}')
-            sleep(5)
+            sleep(60)
         elif test == 2:
             break
 
