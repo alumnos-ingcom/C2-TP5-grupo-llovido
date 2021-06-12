@@ -5,6 +5,8 @@
 ################
 
 import tp4ej1 as inp
+import tp4ej7 as div
+from time import sleep
 
 def es_par(numero):
     """
@@ -17,7 +19,11 @@ def es_par(numero):
         True: si el numero es par
         False: si el numero es impar
     """
-    pass
+    cociente, resto = div.division_lenta(numero, 2)
+    if resto == 0:
+        return True
+    else:
+        return False
 
 def prueba():
     """Toda la interacción con el usuario va aca"""
