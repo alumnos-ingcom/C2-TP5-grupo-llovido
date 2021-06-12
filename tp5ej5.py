@@ -23,7 +23,15 @@ def inversion(texto):
     Retorna:
         txt(string):    cadena de caracteres invertida
     '''
-    pass
+    intermedio = []
+
+    for i in range(len(texto)):
+        var1 =  ord(texto[i])
+        if (var1 >= 97 and var1 <= 122):
+            var2 = var1 - 32
+        elif (var1 >= 65 and var1 <= 90):
+            var2 = i + 32
+        intermedio.append(var2)
 
 def prueba():
     """Toda la interacción con el usuario va acá"""

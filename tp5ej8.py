@@ -13,7 +13,7 @@ def cifrado_cesar(texto, rotate):
     '''
     Funcion que implementa el cifrado cesar a una cadena de caracteres.
 
-    El cifrado
+    El cifrado cesar 
     '''
     pass
 
