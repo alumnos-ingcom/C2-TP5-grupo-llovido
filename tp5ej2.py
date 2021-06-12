@@ -4,6 +4,9 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
+import tp4ej1 as inp
+from time import sleep
+
 
 
 def fibonacci(n, call=True):
@@ -42,7 +45,23 @@ def fibonacci(n, call=True):
 
 def prueba():
     """Toda la interacción con el usuario va acá"""
-    print(fibonacci(5))
+    while True:
+        print('\033[2J')
+        print("""
+En este ejercicio, se le tiene que ingresar un numero
+y la funcion retorna True si el numero es par y 
+False si el numero es impar
+    Ingrese 1 para ingresar número
+    Ingrese 2 para terminar la prueba""")
+
+        test = inp.ingreso_entero_restringido("ingrese opción", 1, 2)
+        if test == 1:
+            n = inp.ingreso_entero("ingrese numero de prueba")
+            resultado = fibonacci(n)
+            print(f'El término {n} de la serie es: {resultado}')
+            sleep(10)
+        elif test == 2:
+            break    
 
 
 
