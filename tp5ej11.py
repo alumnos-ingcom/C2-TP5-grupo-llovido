@@ -7,6 +7,7 @@
 
 import tp4ej1 as inp
 from time import sleep
+from generador_listas import lista_random
 
 
 
@@ -46,7 +47,7 @@ def promedio_movil(lista, n):
         raise ErrorN("Se está queriendo promediar con un numero más grande que el largo de la lista")
 
     ret = []
-    for i in range(0, len(lista) - n):
+    for i in range(0, len(lista) - n + 1):
         l2 = []
         for j in range(n):
             l2.append(lista[i+j])
@@ -66,9 +67,44 @@ def promedio_movil(lista, n):
 
 def prueba():
     """Toda la interacción con el usuario va acá"""
-    l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    while True:
+        limpiar_consola()
+        print("""
+En este ejercicio, se ingresa una lista de numeros
+y un numero para ir moviendose. La funcion tiene que
+retornar el promedio movil de la lista en base al
+numero movil
+    Ingrese 1 para ingresar lista definida por el usuario y numero movil
+    Ingrese 2 para ingresar lista aleatoria pero numero movil definido por usuario
+    Ingrese 3 para terminar la prueba""")
 
-    print(promedio_movil(l, 3))
+        test = inp.ingreso_entero_restringido("ingrese opción", 1, 3)
+        if test == 1:
+            movil = inp.ingreso_entero("Ingrese el valor del n")
+            largo = inp.ingreso_entero("ingrese el largo de la lista")
+
+            listita = []
+            for i in range(largo):
+                aux = inp.ingreso_entero(f"Ingrese el {i+1}esimo valor")
+                listita.append(aux)
+            print(f"La lista final es: {listita}")
+
+            resultado = promedio_movil(listita, movil)
+            print(f'''El promedio movil de la lista {listita} con movil {movil} es:
+                    {resultado}''')
+            sleep(10)
+        elif test == 2:
+            listita = lista_random()
+            movil = inp.ingreso_entero("Ingrese el valor del n")
+            print(f"La lista final es: {listita}")
+
+            resultado = promedio_movil(listita, movil)
+            print(f'''El promedio movil de la lista {listita} con movil {movil} es:
+                    {resultado}''')
+            sleep(10)
+        elif test == 3:
+            break    
+
 
 if __name__ == "__main__":
     prueba()
