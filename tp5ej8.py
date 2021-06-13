@@ -33,10 +33,10 @@ def rotacion(letra, rotate, minimo, maximo):
     if letra >= minimo and letra <= maximo:
         letra += rotate
         if letra > maximo:
-            if maximo == 57: #si es digito, tengo que volver menos
+            if maximo == ord('9'): #si es digito, tengo que volver menos
                 letra -= 10
-            else:            #si es letra, vuelvo mas
-                letra -= 25
+            else:                  #si es letra, vuelvo mas
+                letra -= 26
     return letra
 
 
@@ -53,29 +53,56 @@ def codificado_cesar(texto, rotate):
         ret(str):       cadena de caracteres codificada segun el valor
                         de rotate
     '''
+    modificado = []
     for i in range(len(texto)):
         valor = ord(texto[i])
         
-        #mayusculas A = 65...Z = 90
-        valor = rotacion(valor, rotate, 65, 90)
+        #mayusculas
+        valor = rotacion(valor, rotate, ord('A'), ord('Z'))
 
-        #minusculas a = 97...z = 122
-        valor = rotacion(valor, rotate, 97, 122)
+        #minusculas
+        valor = rotacion(valor, rotate, ord('a'), ord('z'))
 
-        #digitos 0 = 48...9 = 57
-        valor = rotacion(valor, rotate, 48, 57)
-    
+        #digitos
+        valor = rotacion(valor, rotate, ord('0'), ord('9'))
+        
+        modificado.append(str(chr(valor)))
+
+    return "".join(modificado)
 
 
 
-def decodificado_cesar(text, rotate)
+def decodificado_cesar(text, rotate):
     pass
 
 
 
 def prueba():
     """Toda la interacción con el usuario va acá"""
-    pass
+    while True:
+        limpiar_consola()
+        print("""
+En este ejercicio, se ingresa un texto y una 
+cantidad de numeros a rotar para el codificado
+y decodificado de cesar
+    Ingrese 1 para codificar texto
+    Ingrese 2 para decodificar texto
+    Ingrese 3 para terminar la prueba""")
+
+        test = inp.ingreso_entero_restringido("ingrese opción", 1, 3)
+        if test == 1:
+            rotacion = inp.ingreso_entero("Ingrese el valor de la rotacion")
+            testo = input("ingrese el texto a codificar >>> ")
+            resultado = codificado_cesar(testo, rotacion)
+            print(f'''La codificacion del texto {testo} con rotacion {rotacion} es:
+                    {resultado}''')
+            sleep(5)
+        elif test == 2:
+            decodificado_cesar()
+        elif test == 3:
+            break    
+
+
 
 if __name__ == "__main__":
     prueba()
