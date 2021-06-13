@@ -4,7 +4,7 @@
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
-import tp4ej1.py as inp
+import tp4ej1 as inp
 from time import sleep
 # Reemplazar por las funciones del ejercicio
 
