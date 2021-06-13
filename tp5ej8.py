@@ -37,6 +37,11 @@ def rotacion(letra, rotate, minimo, maximo):
                 letra -= 10
             else:                  #si es letra, vuelvo mas
                 letra -= 26
+        if letra < minimo:
+            if minimo == ord('0'):
+                letra += 10
+            else:
+                letra += 26
     return letra
 
 
@@ -55,7 +60,6 @@ def codificado_cesar(texto, rotate):
     '''
     modificado = []
     for i in range(len(texto)):
-        valor = ord(texto[i])
         
         #mayusculas
         valor = rotacion(valor, rotate, ord('A'), ord('Z'))
@@ -73,7 +77,18 @@ def codificado_cesar(texto, rotate):
 
 
 def decodificado_cesar(text, rotate):
-    pass
+    '''
+    Funcion que implementa el decifrado cesar a una cadena de caracteres.
+
+    Argumentos:
+        texto(str):     cadena de caracteres a ser codificada
+        rotate(int):    cantidad de posiciones a rotar el caracter
+
+    Retorna:
+        ret(str):       cadena de caracteres codificada segun el valor
+                        de rotate
+    '''
+    return codificado_cesar(text, (-1) * rotate)
 
 
 
@@ -96,9 +111,14 @@ y decodificado de cesar
             resultado = codificado_cesar(testo, rotacion)
             print(f'''La codificacion del texto {testo} con rotacion {rotacion} es:
                     {resultado}''')
-            sleep(5)
+            sleep(10)
         elif test == 2:
-            decodificado_cesar()
+            rotacion = inp.ingreso_entero("Ingrese el valor de la rotacion")
+            testo = input("ingrese el texto a decodificar >>> ")
+            resultado = decodificado_cesar(testo, rotacion)
+            print(f'''La decodificacion del texto {testo} con rotacion {rotacion} es:
+                    {resultado}''')
+            sleep(10)
         elif test == 3:
             break    
 
