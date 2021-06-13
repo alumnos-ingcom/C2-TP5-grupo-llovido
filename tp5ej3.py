@@ -1,11 +1,18 @@
 ################
 # Biagini Agostina  - @AgostinaB
 # Evaraldo Adrian   - @chim20air
+# Ejercicio 3 - Tribonacci
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
 import tp4ej1 as inp
 from time import sleep
+
+
+
+def limpiar_consola():
+    '''Funcion para limpiar la salida de la consola'''
+    print('\033[2J')
 
 
 
@@ -47,7 +54,7 @@ def tribonacci(n, call=True):
 def prueba():
     """Toda la interacción con el usuario va acá"""
     while True:
-        print('\033[2J')
+        limpiar_consola()
         print("""
 En este ejercicio, se le tiene que ingresar un numero
 y la funcion retorna True si el numero es par y 

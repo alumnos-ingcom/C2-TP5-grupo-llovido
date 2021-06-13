@@ -1,11 +1,18 @@
 ################
 # Biagini Agostina  - @AgostinaB
 # Evaraldo Adrian   - @chim20air
+# Ejercicio 5 - Inversion de mayusculas
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
 import tp4ej1 as inp
 from time import sleep
+
+
+
+def limpiar_consola():
+    '''Funcion para limpiar la salida de la consola'''
+    print('\033[2J')
 
 
 
@@ -39,7 +46,7 @@ def inversion(texto):
 def prueba():
     """Toda la interacción con el usuario va acá"""
     while True:
-        print('\033[2J')
+        limpiar_consola()
         print("""
 En este ejercicio, se ingresa una palabra en mayúsculas y
 minúsculas y la función retorna la inversión entre ellas.

@@ -1,12 +1,19 @@
 ################
 # Biagini Agostina  - @AgostinaB
 # Evaraldo Adrian   - @chim20air
+# Ejercicio 1 - Pares e impares
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
 import tp4ej1 as inp
 import tp4ej7 as div
 from time import sleep
+
+
+
+def limpiar_consola():
+    '''Funcion para limpiar la salida de la consola'''
+    print('\033[2J')
 
 
 
@@ -32,7 +39,7 @@ def es_par(numero):
 def prueba():
     """Toda la interacción con el usuario va aca"""
     while True:
-        print('\033[2J')
+        limpiar_consola()
         print("""
 En este ejercicio, se le tiene que ingresar un numero
 y la funcion retorna True si el numero es par y 

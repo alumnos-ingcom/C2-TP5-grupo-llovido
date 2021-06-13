@@ -1,12 +1,19 @@
 ################
 # Biagini Agostina  - @AgostinaB
 # Evaraldo Adrian   - @chim20air
+# Ejercicio 10 - Texto binario
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
 import tp4ej1 as inp
 import tp4ej7 as division
 from time import sleep
+
+
+
+def limpiar_consola():
+    '''Funcion para limpiar la salida de la consola'''
+    print('\033[2J')
 
 
 
@@ -42,7 +49,7 @@ def binario(numero):
 def prueba():
     """Toda la interacción con el usuario va acá"""
     while True:
-        print('\033[2J')
+        limpiar_consola()
         print("""
 En este ejercicio, se ingresa un número
 y la funcion retorna una cadena con su representación binaria.

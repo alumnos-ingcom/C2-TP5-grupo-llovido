@@ -1,12 +1,19 @@
 ################
 # Biagini Agostina  - @AgostinaB
 # Evaraldo Adrian   - @chim20air
+# Ejercicio 14 - Numeros capicua
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 
 import tp4ej1 as inp
 import tp4ej11 as palindromo
 from time import sleep
+
+
+
+def limpiar_consola():
+    '''Funcion para limpiar la salida de la consola'''
+    print('\033[2J')
 
 
 
@@ -36,7 +43,7 @@ def capicua(numero):
 def prueba():
     """Toda la interacción con el usuario va acá"""
     while True:
-        print('\033[2J')
+        limpiar_consola()
         print("""
 En este ejercicio, se ingresan dos números
 y la funcion retorna la distancia entre ellos.

@@ -1,6 +1,7 @@
 ################
 # Biagini Agostina  - @AgostinaB
 # Evaraldo Adrian   - @chim20air
+# Ejercicio 8 - Cifrado del Cesar
 # UNRN Andina - Introducción a la Ingenieria en Computación
 ################
 '''
@@ -19,6 +20,14 @@ con 13 posiciones, resultando en A->N, B->O... Y->L y Z->M.
 
 import tp4ej1 as inp
 from time import sleep
+
+
+
+def limpiar_consola():
+    '''Funcion para limpiar la salida de la consola'''
+    print('\033[2J')
+
+
 
 def rotacion(letra, rotate, minimo, maximo):
     if letra >= minimo and letra <= maximo:
