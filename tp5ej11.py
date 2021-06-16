@@ -11,7 +11,7 @@ from generador_listas import lista_random
 
 
 
-class ErrorN(Exception):
+class ErrorLongitudesDiferntes(Exception):
     '''En el caso de que n sea mayor que la longitud de la lista ingresada'''
     pass
 
@@ -44,7 +44,7 @@ def promedio_movil(lista, n):
         ret(list):      Lista promediada
     '''
     if n > len(lista):
-        raise ErrorN("Se está queriendo promediar con un numero más grande que el largo de la lista")
+        raise ErrorLongitudesDiferntes("Se está queriendo promediar con un numero más grande que el largo de la lista")
 
     ret = []
     for i in range(0, len(lista) - n + 1):

@@ -21,6 +21,55 @@ def limpiar_consola():
 
 
 
+def separacion(string, char=''):
+    '''
+    Función customizable para separar una cadena de caracteres
+    en palabras.
+
+    Argumentos:
+        string(str):    cadena de caracteres a separar
+        char(str):      caracter para indicar la separacion
+                        por defecto es un espacio
+    Retorna:
+        ret(list):      lista con las palabras separadas de
+                        la entrada
+    '''
+    ret = []
+    word = []
+    for letra in range(len(string)):
+        if ord(string[letra]) != ord(char):
+            word.append(s[letra])
+            if letra == len(string) - 1:
+                ret.append("".join(word))
+                word.clear()
+        else:
+            ret.append("".join(word))
+            word.clear()
+    return ret
+
+
+
+def search(lista, word):
+    '''
+    Función que busca una palabra dentro de un string.
+
+    Argumentos:
+        lista(list):    lista de palabras
+        word(str):      palabra a buscar
+
+    Retorna:
+        ret(bool):      True si la palabra fue hallada
+                        False en caso contrario
+    '''
+    for palabra in lista:
+        if palabra == word:
+            ret = True
+            break
+        else:
+            ret = False
+
+    return ret
+
 def busqueda_palabras(string, word):
     '''
     Funcion que dado un string, busca la palabra ingresada y devuelve
@@ -35,9 +84,9 @@ def busqueda_palabras(string, word):
         ret(list):      lista de posiciones en las que se encuentra
                         la palabra objetivo
     '''
-    entrada = string.split()
-    
-    if word not in entrada:
+    entrada = separacion(string)
+            
+    if not search(entrada, word):
         raise Error404PalabraNoEncontrada(f"la palabra {word} no se encuentra en la entrada")
 
     ret = []
