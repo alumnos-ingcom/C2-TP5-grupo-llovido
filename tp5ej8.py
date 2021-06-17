@@ -60,15 +60,19 @@ def codificado_cesar(texto, rotate):
     '''
     modificado = []
     for i in range(len(texto)):
+        n = ord(texto[i])
         
-        #mayusculas
-        valor = rotacion(valor, rotate, ord('A'), ord('Z'))
+        if n >= ord('0') and n <= ord('9'):
+            #digitos
+            valor = rotacion(n, rotate, ord('0'), ord('9'))
 
-        #minusculas
-        valor = rotacion(valor, rotate, ord('a'), ord('z'))
+        elif n >= ord('A') and n <= ord('Z'):
+            #mayusculas
+            valor = rotacion(n, rotate, ord('A'), ord('Z'))
 
-        #digitos
-        valor = rotacion(valor, rotate, ord('0'), ord('9'))
+        elif n >= ord('a') and n <= ord('z'):
+            #minusculas
+            valor = rotacion(n, rotate, ord('a'), ord('z'))
         
         modificado.append(str(chr(valor)))
 
@@ -118,7 +122,7 @@ y decodificado de cesar
             resultado = decodificado_cesar(testo, rotacion)
             print(f'''La decodificacion del texto {testo} con rotacion {rotacion} es:
                     {resultado}''')
-            sleep(10)
+            sleep(3)
         elif test == 3:
             break    
 
